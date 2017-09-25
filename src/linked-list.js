@@ -36,15 +36,13 @@ class LinkedList {
   }
 
   at(index) {
-    let i = this.list.find(function(el, ind) {
-      return index === ind ? el : false;
-    })
+    let i = this.list.find((el, ind) => index === ind ? el : false)
     return i.data;
   }
 
   insertAt(index, data) {
     let x = 0;
-    let i = this.list.find(function(el, ind) {
+    let i = this.list.find((el, ind) => {
       x = ind;
       return index === ind ? el : false;
     })
@@ -74,9 +72,7 @@ class LinkedList {
   }
 
   indexOf(data) {
-    return this.list.findIndex(function(el) {
-      return data === el.data;
-    });
+    return this.list.findIndex(el => data === el.data);
   }
 }
 
