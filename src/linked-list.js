@@ -43,10 +43,14 @@ class LinkedList {
   }
 
   insertAt(index, data) {
+    let x = 0;
     let i = this.list.find(function(el, ind) {
+      x = ind;
       return index === ind ? el : false;
     })
-    i.data = data;
+    if (i) {
+      this.list.splice(x, 0, new Node(data));
+    } else i.data = data;
   }
 
   isEmpty() {
