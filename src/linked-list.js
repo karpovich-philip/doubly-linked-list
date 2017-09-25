@@ -11,7 +11,7 @@ class LinkedList {
   }
 
   append(data) {
-    if (!this.length) { //===0
+    if (!this.length) {
       this._head = new Node(data);
       this._tail = new Node(data);
     }
@@ -30,9 +30,15 @@ class LinkedList {
     return this._tail;
   }
 
-  at(index) {}
+  at(index) {
+    let i = this.list.find(function(el, ind) {
+      return index === ind ? el : false;
+    })
+    return i.data;
+  }
 
-  insertAt(index, data) {}
+  insertAt(index, data) {
+  }
 
   isEmpty() {}
 
@@ -40,7 +46,9 @@ class LinkedList {
 
   deleteAt(index) {}
 
-  reverse() {}
+  reverse() {
+    this.list = this.list.reverse();
+  }
 
   indexOf(data) {}
 }
