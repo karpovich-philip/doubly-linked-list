@@ -38,11 +38,18 @@ class LinkedList {
   }
 
   insertAt(index, data) {
+    let i = this.list.find(function(el, ind) {
+      return index === ind ? el : false;
+    })
+    i.data = data;
   }
 
-  isEmpty() {}
+  isEmpty() {
+    return !this.list.length
+  }
 
-  clear() {}
+  clear() {
+  }
 
   deleteAt(index) {}
 
@@ -50,7 +57,9 @@ class LinkedList {
     this.list = this.list.reverse();
   }
 
-  indexOf(data) {}
+  indexOf(data) {
+    return this.list.indexOf(data)
+  }
 }
 
 module.exports = LinkedList;
