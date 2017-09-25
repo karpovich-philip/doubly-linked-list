@@ -2,8 +2,6 @@ const Node = require('./node');
 
 class LinkedList {
   constructor() {
-    this.previous = null;
-    this.next = null;
     this._head = null;
     this._tail = null;
     this.list = [];
@@ -24,17 +22,15 @@ class LinkedList {
   head() {
     let pos = this.list[0];
     if (pos) {
-      this._head = pos.data;
-      return this._head;
+      return this._head = pos.data;
     }
-    return null
+    return null;
   }
 
   tail() {
     let pos = this.list[this.list.length-1];
     if (pos) {
-      this._tail = pos.data;
-      return this._tail;
+      return this._tail = pos.data;
     }
     return null;
   }
@@ -74,12 +70,9 @@ class LinkedList {
   }
 
   indexOf(data) {
-    for (let i = 0; i < this.list.length; i++) {
-      if (this.list[i].data === data) {
-        return i;
-      }
-    }
-    return -1;
+    return this.list.findIndex(function(el) {
+      return data === el.data;
+    });
   }
 }
 
