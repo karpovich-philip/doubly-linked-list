@@ -21,13 +21,21 @@ class LinkedList {
   }
 
   head() {
-    this._head = this.list[0].data;
-    return this._head;
+    let pos = this.list[0];
+    if (pos) {
+      this._head = pos.data;
+      return this._head;
+    } else
+      return null
   }
 
   tail() {
-    this._tail = this.list[this.list.length-1].data;
-    return this._tail;
+    let pos = this.list[this.list.length-1];
+    if (pos) {
+      this._tail = pos.data;
+      return this._tail;
+    } else
+      return null
   }
 
   at(index) {
@@ -49,6 +57,8 @@ class LinkedList {
   }
 
   clear() {
+    this.list = [];
+    this.length = 0;
   }
 
   deleteAt(index) {}
